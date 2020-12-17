@@ -16,7 +16,7 @@ const init = async () => {
         method: 'GET',
         path: '/getOrder',
         config: {
-         handler: (request, reply) => {return trackingService.getOrderDetails() }
+         handler: (request, reply) => {return trackingService.getOrderDetails(request.query.po_id) }
         }
     });
 
