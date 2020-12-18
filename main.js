@@ -20,6 +20,14 @@ const init = async () => {
         }
     });
 
+    server.route({
+        method: 'GET',
+        path: '/getLineItemMileStones',
+        config: {
+         handler: (request, reply) => {return trackingService.getLineItemMileStones(request.query.po_id, request.query.line_item_id) }
+        }
+    });
+
     await server.start();
     console.log('Server running on %s', server.info.uri);
 };
